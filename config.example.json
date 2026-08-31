@@ -1,0 +1,10 @@
+{
+  "rtsp_url": "rtsp://<user>:<pass>@<camera-ip>:554/h264",
+  "telegram_bot_token": "123456789:ABCdefGhIJKlmNoPQRsTUVwxyZ",
+  "telegram_chat_id": "-100123456789",
+  "zone_points": [],
+  "enter_seconds": 4,
+  "clip_seconds": 10,
+  "person_conf": 0.4,
+  "pre_buffer_seconds": 5
+}

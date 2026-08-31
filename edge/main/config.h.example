@@ -1,0 +1,35 @@
+#pragma once
+#include <vector>
+
+// إعدادات شبكة الواي فاي
+#define WIFI_SSID "YOUR_WIFI_SSID"
+#define WIFI_PASS "YOUR_WIFI_PASSWORD"
+
+// إعدادات التنبيهات لبوت تيليجرام
+#define TG_BOT_TOKEN "123456789:ABCdefGhIJKlmNoPQRsTUVwxyZ"
+#define TG_CHAT_ID "-100123456789"
+
+// إعدادات الموقتات (بالميلي ثانية)
+#define DWELL_MS 4000            // مدة استقرار وبقاء الشخص في المنطقة قبل إرسال التنبيه
+#define ALERT_COOLDOWN_MS 30000  // فترة التهدئة بين التنبيهات المتتالية لمنع تكرار الإرسال
+
+// اختيار لوحة الكاميرا المستخدمة لضبط دبابيس (Pins) التوصيل تلقائياً:
+// 1: ESP32-S3-EYE (اللوحة الافتراضية)
+// 2: Freenove ESP32-S3 WROOM Board
+// 3: Seeed Studio XIAO ESP32-S3 Sense
+#define CAMERA_BOARD 1
+
+// إحداثيات مضلع المنطقة الأمنية ثنائية الأبعاد
+// يمثل النقاط (x, y) حسب دقة الكاميرا المحددة للكشف (QVGA 320x240)
+struct Point {
+    int x;
+    int y;
+};
+
+// نقاط المنطقة الأمنية الافتراضية (مثال: شبه منحرف بوسط الكادر)
+const std::vector<Point> ZONE_POINTS = {
+    {40, 60},
+    {280, 60},
+    {310, 220},
+    {10, 220}
+};
